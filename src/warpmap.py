@@ -76,14 +76,12 @@ else:
     print("Invalid choice!")
     exit(0)
    
-except KeyboardInterrupt:
-   print("\nProgram interrupted. Exiting gracefully.")
-   exit(0)
-
 for device in devices:
-    print(device['ip'] + "\t\t" + device['mac'])
+   print(device['ip'] + "\t\t" + device['mac'])
+   print("Nmap scan results for " + device['ip'] + ":")
+   print(nmap_scan(device['ip'], scan_type))
+   print("-----------------------------------------")
 
-    # Perform nmap scan on the device
-    print("Nmap scan results for " + device['ip'] + ":")
-    print(nmap_scan(device['ip'], scan_type))
-    print("-----------------------------------------")
+except KeyboardInterrupt:
+    print("\nProgram interrupted. Exiting gracefully.")
+    exit(0)
