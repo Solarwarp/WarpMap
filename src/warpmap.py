@@ -75,6 +75,10 @@ elif scan_choice == '5':
 else:
     print("Invalid choice!")
     exit(0)
+   
+except KeyboardInterrupt:
+   print("\nProgram interrupted. Exiting gracefully.")
+   exit(0)
 
 for device in devices:
     print(device['ip'] + "\t\t" + device['mac'])
